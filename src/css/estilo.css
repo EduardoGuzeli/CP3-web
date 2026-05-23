@@ -369,3 +369,22 @@ footer {
   cursor: default;
   opacity: 0.8;
 }
+
+/* ===== BOTÃO REMOVER ===== */
+.btn-remover {
+  background: transparent;
+  border: 1px solid #e53935;
+  color: #e53935;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-remover:hover {
+  background: #e53935;
+  color: #fff;
+}
