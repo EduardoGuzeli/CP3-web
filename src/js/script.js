@@ -1,3 +1,4 @@
+
 const produtos = [
   {
     id: 1,
@@ -42,36 +43,36 @@ const produtos = [
     imagem: "/src/assets/img/BMWR1250GS.png"
   }
 ];
-
+ 
 function formatarPreco(valor) {
   return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
-
+ 
 function renderizarCards() {
   const container = document.getElementById('cards-container');
   if (!container) return;
-
+ 
   container.innerHTML = '';
-
+ 
   produtos.forEach(produto => {
     const card = document.createElement('div');
     card.classList.add('card');
-
+ 
     card.innerHTML = `
       <img class="card-img" src="${produto.imagem}" alt="${produto.nome}">
       <div class="card-body">
         <h3 class="card-nome">${produto.nome}</h3>
         <p class="card-desc">${produto.descricao}</p>
         <span class="card-preco">${formatarPreco(produto.preco)}</span>
-        <button class="btn-add">Adicionar ao Carrinho</button>
+        <button class="btn-add" onclick="adicionarAoCarrinho(${produto.id}, this)">Adicionar ao Carrinho</button>
       </div>
-    `;
-
+    `;                                          
+ 
     container.appendChild(card);
   });
 }
-
-
+ 
+// ← APAGA A LINHA ANTIGA E DEIXA SÓ ESSA:
 document.addEventListener('DOMContentLoaded', () => {
   renderizarCards();
   renderizarCarrinho();
@@ -169,3 +170,4 @@ function aplicarDesconto() {
  
   descontoAplicado = true;
 }
+ 

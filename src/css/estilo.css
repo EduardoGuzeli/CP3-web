@@ -362,3 +362,10 @@ footer {
   display: block;
   background: var(--cinza-medio);
 }
+
+/* ===== BOTÃO ADICIONADO ===== */
+.btn-add:disabled {
+  background: var(--verde-escuro);
+  cursor: default;
+  opacity: 0.8;
+}
