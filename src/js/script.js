@@ -71,4 +71,101 @@ function renderizarCards() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', renderizarCards);
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderizarCards();
+  renderizarCarrinho();
+});
+ 
+// ===== CARRINHO =====
+ 
+function lerCarrinho() {
+  const salvo = localStorage.getItem('carrinho');
+  return salvo ? JSON.parse(salvo) : [];
+}
+ 
+function salvarCarrinho(carrinho) {
+  localStorage.setItem('carrinho', JSON.stringify(carrinho));
+}
+ 
+function adicionarAoCarrinho(id, btn) {
+  const produto = produtos.find(p => p.id === id);
+  if (!produto) return;
+ 
+  const carrinho = lerCarrinho();
+  const itemExistente = carrinho.find(item => item.id === id);
+ 
+  if (itemExistente) {
+    itemExistente.quantidade += 1;
+  } else {
+    carrinho.push({ id: produto.id, nome: produto.nome, preco: produto.preco, quantidade: 1 });
+  }
+ 
+  salvarCarrinho(carrinho);
+ 
+  btn.textContent = '✓ Adicionado!';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'Adicionar ao Carrinho';
+    btn.disabled = false;
+  }, 1500);
+}
+ 
+function calcularTotal(itens) {
+  return itens.reduce((acumulador, item) => {
+    return acumulador + (item.preco * item.quantidade);
+  }, 0);
+}
+ 
+function renderizarCarrinho() {
+  const lista = document.getElementById('carrinho-lista');
+  if (!lista) return;
+ 
+  const carrinho = lerCarrinho();
+  lista.innerHTML = '';
+ 
+  if (carrinho.length === 0) {
+    lista.innerHTML = '<li style="text-align:center; color:#888; padding:2rem;">Carrinho vazio. Adicione motos na página inicial!</li>';
+    document.getElementById('total-compra').textContent = formatarPreco(0);
+    return;
+  }
+ 
+  carrinho.forEach(item => {
+    const li = document.createElement('li');
+    li.classList.add('carrinho-item');
+ 
+    li.innerHTML = `
+      <div class="item-info">
+        <span class="item-nome">${item.nome}</span>
+        <span class="item-qtd">Quantidade: ${item.quantidade}</span>
+      </div>
+      <span class="item-preco">${formatarPreco(item.preco * item.quantidade)}</span>
+    `;
+ 
+    lista.appendChild(li);
+  });
+ 
+  document.getElementById('total-compra').textContent = formatarPreco(calcularTotal(carrinho));
+}
+ 
+let descontoAplicado = false;
+ 
+function aplicarDesconto() {
+  if (descontoAplicado) {
+    alert('Desconto já foi aplicado!');
+    return;
+  }
+ 
+  const carrinho = lerCarrinho();
+ 
+  const totalComDesconto = carrinho.reduce((acumulador, item) => {
+    return acumulador + (item.preco * item.quantidade * 0.9);
+  }, 0);
+ 
+  document.getElementById('total-compra').textContent = formatarPreco(totalComDesconto);
+  document.getElementById('badge-desc').style.display = 'inline-block';
+  document.getElementById('btn-desconto').disabled = true;
+  document.getElementById('btn-desconto').style.opacity = '0.5';
+ 
+  descontoAplicado = true;
+}
