@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root {
+  --preto: #0a0a0a;
+  --cinza-escuro: #141414;
+  --cinza-medio: #1e1e1e;
+  --cinza-card: #242424;
+  --verde: #00e676;
+  --verde-escuro: #00c853;
+  --branco: #f5f5f5;
+  --texto-muted: #888;
+  --borda: #2a2a2a;
+}
+
