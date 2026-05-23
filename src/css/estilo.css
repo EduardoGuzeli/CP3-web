@@ -71,3 +71,55 @@ nav {
 .nav-links a:hover {
   color: var(--verde);
 }
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #0a0a0a 0%, #0d1f12 100%);
+  padding: 5rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid var(--borda);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, rgba(0,230,118,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero h1 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3rem, 8vw, 6rem);
+  letter-spacing: 6px;
+  color: var(--branco);
+  line-height: 1;
+}
+
+.hero h1 span {
+  color: var(--verde);
+}
+
+.hero p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: var(--texto-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ===== SECTION TITLE ===== */
+.section-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.5rem;
+  letter-spacing: 4px;
+  color: var(--verde);
+  text-align: center;
+  margin: 3rem 0 2rem;
+  text-transform: uppercase;
+}
