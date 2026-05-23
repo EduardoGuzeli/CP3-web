@@ -206,3 +206,111 @@ nav {
 .btn-add:hover {
   background: var(--verde-escuro);
 }
+
+/* ===== CARRINHO (loja.html) ===== */
+.carrinho-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 2rem 4rem;
+}
+
+.carrinho-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.carrinho-item {
+  background: var(--cinza-card);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border-color 0.2s;
+}
+
+.carrinho-item:hover {
+  border-color: var(--verde);
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-nome {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+
+.item-qtd {
+  font-size: 0.9rem;
+  color: var(--texto-muted);
+}
+
+.item-preco {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--verde);
+}
+
+.resumo-financeiro {
+  background: var(--cinza-medio);
+  border: 2px solid var(--verde);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.resumo-financeiro h2 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  color: var(--texto-muted);
+  margin-bottom: 0.5rem;
+}
+
+#total-compra {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3rem;
+  color: var(--verde);
+  letter-spacing: 2px;
+}
+
+.btn-desconto {
+  margin-top: 1.5rem;
+  background: transparent;
+  color: var(--verde);
+  border: 2px solid var(--verde);
+  padding: 0.8rem 2rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-desconto:hover {
+  background: var(--verde);
+  color: var(--preto);
+}
+
+.badge-desconto {
+  display: inline-block;
+  background: var(--verde);
+  color: var(--preto);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+}
