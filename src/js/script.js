@@ -58,7 +58,7 @@ function renderizarCards() {
     card.classList.add('card');
 
     card.innerHTML = `
-      <div class="card-img">${produto.emoji}</div>
+      <img class="card-img" src="${produto.imagem}" alt="${produto.nome}">
       <div class="card-body">
         <h3 class="card-nome">${produto.nome}</h3>
         <p class="card-desc">${produto.descricao}</p>
