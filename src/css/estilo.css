@@ -12,3 +12,62 @@
   --borda: #2a2a2a;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--preto);
+  color: var(--branco);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  background: var(--cinza-escuro);
+  border-bottom: 2px solid var(--verde);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem;
+  color: var(--verde);
+  letter-spacing: 3px;
+  text-decoration: none;
+}
+
+.nav-logo span {
+  color: var(--branco);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--verde);
+}
