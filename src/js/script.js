@@ -131,17 +131,26 @@ function renderizarCarrinho() {
     return;
   }
  
-  carrinho.forEach(item => {
+carrinho.forEach((item, index) => {
     const li = document.createElement('li');
     li.classList.add('carrinho-item');
  
     li.innerHTML = `
-      <div class="item-info">
-        <span class="item-nome">${item.nome}</span>
-        <span class="item-qtd">Quantidade: ${item.quantidade}</span>
-      </div>
-      <span class="item-preco">${formatarPreco(item.preco * item.quantidade)}</span>
-    `;
+  <div class="item-info">
+    <span class="item-nome">${item.nome}</span>
+    <span class="item-qtd">Quantidade: ${item.quantidade}</span>
+  </div>
+
+  <div style="display:flex; align-items:center; gap:1rem;">
+    <span class="item-preco">
+      ${formatarPreco(item.preco * item.quantidade)}
+    </span>
+
+    <button class="btn-remover" onclick="removerItem(${index})">
+      Remover
+    </button>
+  </div>
+`;
  
     lista.appendChild(li);
   });
