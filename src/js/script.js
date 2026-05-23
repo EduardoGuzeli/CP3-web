@@ -171,3 +171,16 @@ function aplicarDesconto() {
   descontoAplicado = true;
 }
  
+function removerItem(index) {
+  const carrinho = lerCarrinho();
+  carrinho.splice(index, 1);
+  salvarCarrinho(carrinho);
+
+  // Reset do desconto pois o total mudou
+  descontoAplicado = false;
+  document.getElementById('badge-desc').style.display = 'none';
+  document.getElementById('btn-desconto').disabled = false;
+  document.getElementById('btn-desconto').style.opacity = '1';
+
+  renderizarCarrinho();
+}
