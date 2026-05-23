@@ -314,3 +314,43 @@ nav {
   margin-top: 0.5rem;
   letter-spacing: 1px;
 }
+/* ===== SOBRE (sobre.html) ===== */
+.sobre-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 2rem 4rem;
+}
+
+.sobre-container h2 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem;
+  color: var(--verde);
+  letter-spacing: 3px;
+  margin: 2rem 0 0.8rem;
+}
+
+.sobre-container p {
+  color: #ccc;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.sobre-destaque {
+  border-left: 4px solid var(--verde);
+  padding-left: 1.2rem;
+  color: var(--branco) !important;
+  font-size: 1.2rem !important;
+  font-weight: 600;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--cinza-escuro);
+  border-top: 1px solid var(--borda);
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--texto-muted);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
