@@ -123,3 +123,86 @@ nav {
   margin: 3rem 0 2rem;
   text-transform: uppercase;
 }
+
+/* ===== CARDS GRID ===== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+.card {
+  background: var(--cinza-card);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--verde);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: var(--cinza-medio);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+.card-body {
+  padding: 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-nome {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: var(--branco);
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  color: var(--texto-muted);
+  flex: 1;
+}
+
+.card-preco {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--verde);
+}
+
+.btn-add {
+  margin-top: 0.8rem;
+  background: var(--verde);
+  color: var(--preto);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.btn-add:hover {
+  background: var(--verde-escuro);
+}
